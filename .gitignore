@@ -7,3 +7,4 @@ info/
 *.log
 *.synctex.gz
 *.vscode/
+!physique/TD
