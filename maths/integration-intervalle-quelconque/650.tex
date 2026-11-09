@@ -85,6 +85,148 @@ lnx est intégrable en 0 donc f est intégrable en 0
        &= -ln(x) + o(lnx)
 \end{align*}
 
+\noindent \colorbox{green}{650.1}\\
+a/ 
+\begin{align*}
+    \int_{2}^{+\infty} \frac{ln(t)}{t} dt 
+\end{align*}
+Au voisinnage de \(t \rightarrow_{+\infty}\) 
+\begin{align*}
+  \frac{lnt}{t}\geq \frac{1}{t} > 0 \text{ et } 
+  t \rightarrow \frac{1}{t} \text{ est d'intégrale divergente en } + \infty
+\end{align*}
+Donc \(\int_{2}^{+\infty} \frac{ln(t)}{t}dt\) est divergente \\
+b/ 
+\begin{align*}
+    \int_{2}^{\rightarrow +\infty} \frac{lnt}{t^{2}} dt 
+\end{align*}
+au voisinnage de \(t \rightarrow +\infty\)\\
+\begin{align*}
+  \frac{lnt}{t} &= \frac{o(\sqrt{t})}{t^{2}}\\
+                &= o(\frac{1}{t^{\frac{3}{2}}})
+\end{align*}
+c/ 
+\begin{align*}
+    \int_{2}^{\rightarrow +\infty} \frac{1}{\sqrt{t}lnt}dt
+\end{align*}
+au voisinnage de \(t \rightarrow +\infty\)
+\begin{align*}
+  \frac{1}{\sqrt{t}lnt} \geq \frac{1}{\sqrt{t}\sqrt{t}} = \frac{1}{t} \text{ intégrale divergente}
+\end{align*}
+d/ 
+\begin{align*}
+    \int_{2}^{\rightarrow \infty} \frac{1}{t lnt}\\
+    \frac{1}{t lnt} > 0 \text{ Dans } [2, +\infty[\cup \{+\infty\}\\
+    \int_{2}^{+\infty} \frac{1}{t ln(t)}dt = [ln(lnt)]^{+\infty}_{2}
+\end{align*}
+
+\noindent \colorbox{green}{650.21}\\
+\begin{align*}
+    \int_{0}^{1} \frac{ln(1-t)}{(1+t)^{2}}dt\\
+    f:x \rightarrow \frac{ln(1-x)}{(1+x)^{2}} \text{ continue sur }[0, 1[
+\end{align*}
+\underline{Au voisinnage de 1 : }
+\begin{align*}
+    \int_{0}^{1} \frac{ln(1-t)}{(1+t)^{2}}dt 
+    f:x \rightarrow \frac{ln(1-x)}{(1+x)^{2}} \text{ continue sur }[0, x[
+\end{align*}
+Au voisinnage de \(t \rightarrow 1\) : 
+\begin{equation*}
+  f(1-u) = \frac{ln(u)}{(1-u)^{2}}
+\end{equation*}
+Par parties sous réserve de limites du crochet
+\begin{align*}
+  \int_{0}^{1}ln(1-t)\frac{1}{(1+t)^{2}} &= [ln(1-t)(-\frac{1}{1+t} + \frac{1}{2})]^{\frac{1}{2}}_{0}
+  - \int_{0}^{1}(\frac{-1}{1+t})(\frac{-1}{1+t}+\frac{1}{2})dt \\
+                                         &= ln(1-t) (\frac{-1}{1+t}+\frac{1}{2})\\
+                                         &= ln(1-t)(\frac{t-1}{2(t+1)})\\
+                                         &= \underbrace{(-1)ln((1-t)(1-t))}\times \frac{1}{2(t+1)}_{\rightarrow 0}\\
+                                         &= t \int_{}^{}\frac{1}{1-t}\times \frac{t-1}{2(t+1)}dt \\
+                                         &= -\frac{1}{2}[ln(t+1)]^{1}_{0}\\
+                                         &= -\frac{1}{2}ln2-0
+\end{align*}
+
+\noindent \colorbox{green}{650.2}
+IPP avec dv = 1 et u = \(\frac{1}{(1+x^{2})^{n}}\)
+\begin{align*}
+  I_{1} &= \frac{\pi}{2}\\
+  I_{n} &= (\frac{2n-3}{2n-2})(\frac{2n-5}{2n-4})\dots \frac{1}{2}I_{1}\\
+  I_{n} &= \frac{1}{2^{n-1}(n-1)!}(2n-3)(2n-5)\dots\times 3 \times 1 \times I_{1}\\
+        &= \frac{(2n-2)!}{(2^{n-1}(n-1)!)^{2}}\frac{\pi}{2}
+\end{align*}
+  
+\noindent \colorbox{green}{650.7}\\
+\begin{equation*}
+    \int_{1}^{+\infty}\frac{1}{x^{n}(1+x^{2})}dx
+\end{equation*}
+a/ \(x \mapsto \frac{1}{x^{n}(1+x^{2})}\) continue sur \([1, +\infty[\)\\
+* Au voisinnage de \(x \rightarrow +\infty\)
+\begin{equation*}
+  \frac{1}{x^{n}(1+x^{2})} \backsim_{x \rightarrow +\infty} \frac{1}{x^{n+2}} \text{ intégrale en } +\infty
+\end{equation*}
+Donc \(I_{n}\) existe\\
+b/ 
+\begin{align*}
+    0 \leq I_{n} \leq \int_{1}^{+\infty}\frac{1}{x^{n}}dx\\
+    &= [\frac{1}{-n+1}x^{-n+1}]^{+\infty}_{1}]\\
+    &= [-\frac{-1}{(n+1)x^{n-1}}]^{+\infty}_{1}\\
+    &= 0 + \frac{1}{n+1}\\
+    &\rightarrow_{n \rightarrow +\infty} 0
+\end{align*}
+Par parties sous réserve de limite finie du crochet 
+\begin{align*}
+    &\int_{1}^{+\infty}\frac{1}{x^{n}}\frac{1}{1+x^{2}}dx\\
+    &= [\frac{-1}{(n-1)x^{n-1}}\times \frac{1}{1+x^{2}}]^{+\infty}_{0} - \int_{1}^{+\infty}\frac{-1}{(n-1)x^{n-1}}\times \frac{-2x}{(1+x^{2})^{2}}dx\\
+    &= 0 + \frac{1}{n-1}\times \frac{1}{2} - \frac{2}{n-1}\underbrace{\int_{1}^{+\infty}\frac{1}{x^{n-2}(1+x^{2})^{2}}dx}_{J_{n}}
+\end{align*}
+\(J_{n}\rightarrow 0\)\\
+Donc 
+\begin{align*}
+  I_{n} &= \frac{1}{2(n-1)} - O(\frac{1}{nx})\\
+        &\backsim \frac{1}{2(n-1)}
+\end{align*}
+    
+\noindent \colorbox{green}{650.6}
+\begin{equation*}
+    \int_{0}^{+\infty}e^{-t}\sin t dt 
+\end{equation*}
+\(t \mapsto e^{-t}\sin t \) continue sur \([0,+\infty[\)\\
+Au voisinnage de \(t \rightarrow +\infty\)
+\begin{align*}
+  e^{-t} \sin t &= e^{-t}O(1)\\
+                &= O(e^{-t}) \text{ intégrale en } t \rightarrow +\infty\\
+  \int_{0}^{+\infty} e^{-t}\sin t dt &= \int_{0}^{+\infty} e^{-t} Im(e^{it})dt \\
+                                     &= Im(\int_{0}^{+\infty}e^{t}e^{it}dt)
+                                     &= Im[\frac{1}{i-1}e^{(i-1)t}]^{+\infty}_{0}\\
+                                     &= \frac{1}{2}
+\end{align*}
+
+\noindent \colorbox{green}{650.20}\\
+a/ 
+\begin{align*}
+    \int_{0}^{+\infty}t^{n}e^{-t}dt = n! \\
+    \int_{0}^{1}ln^{n}t dt 
+\end{align*}
+soit \(n \in \mathbb{N}\)\\
+\(
+t = e^{-u}\\
+dt = -e^{-u}du
+\)
+t de 0 à 1, u de \(+\infty\) à 0\\ 
+Sous réserve de convergence de l'intégrale
+\begin{align*}
+    I = \int_{0}^{+\infty}(-u)^{n}e^{-u}du
+\end{align*}
+
+
+
+
+
+
+
+
+
+
 
 
 
