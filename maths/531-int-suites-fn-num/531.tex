@@ -1,0 +1,181 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{concmath}
+\usepackage[OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath,mathtools}
+\usepackage{calrsfs}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\usepackage{setspace}
+\usepackage{tkz-tab}    
+\usepackage{amssymb}          
+\usepackage{multicol}  
+\usepackage{esint}
+\geometry{margin=0.5in}
+\definecolor{green}{RGB}{52, 235, 168}
+\definecolor{violet}{RGB}{165, 83, 237}
+\definecolor{lemon}{RGB}{170, 237, 83}
+\definecolor{red}{RGB}{240, 125, 84}
+\definecolor{blue}{RGB}{105, 255, 242}
+
+\begin{document}
+\noindent \colorbox{green}{531.13}
+Soit \(x \in [0,1[\) fixé\\
+\begin{align*}
+  f_{n}(x) &= \frac{1}{1 + x + \dots + x^{n}}\\
+           &= \frac{1-x}{1-x^{n}}\\
+           &\xrightarrow[n \to +\infty]{} 1-x
+\end{align*}
+Donc \(f_{n} \rightarrow (g:x \mapsto 1-x)\)\\
+\underline{Dominons :}\\
+\begin{align*}
+  |f_{n}(x)| &= \frac{1}{1+x+\dots+x^{n}}\\
+             &\leq 1 \text{ indépendant de n, intégrable sur }[0, 1[
+\end{align*}
+Par convergence dominée : 
+\begin{align*}
+  \int_{0}^{1} \frac{dx}{1+x+\dots+x^{n}} &\rightarrow \int_{0}^{1}1-x dx \\
+    &= \frac{1}{2}
+\end{align*}
+
+\noindent \colorbox{green}{531.1}\\
+\begin{eqnarray*}
+    \int_{0}^{+\infty} \frac{\sin nt }{nt + t^{2}}dt\\
+    f_{n}(t) = \frac{\sin nt}{nt + t^{2}}
+\end{eqnarray*}
+Soit \(t \in ]0, +\infty[\) fixé, 
+\begin{align*}
+  f_{n}(t) &= \frac{O(1)}{nt + t^{2}}\\
+    &= O(\frac{1}{n})\\ 
+    &\xrightarrow[n \to +\infty]{} 0
+\end{align*}
+\underline{Dominons}\\
+Pour \(t \in ]0, +\infty[, n  \in \mathbb{N}\)
+\begin{align*}
+  |f_{n}(t)| &= \frac{|\sin nt|}{nt + t^{2}} \\
+             &\leq \frac{1}{nt+t^{2}}\\
+             &\leq \frac{1}{t^{2}} \text { indépendant de n, 
+intégrable en \(+ \infty\) mais sur \(]0, +\infty[\)} &= \frac{1}{1+\frac{t}{n}} \\
+             & &\leq 1 \\
+             & &\text{indépendant de n, intégrable en 0, mais pas sur } ]0, +\infty[
+\end{align*}
+\begin{align*}
+    \varphi(t) : t \mapsto \begin{cases} 
+      1 \text{ si } t < 1 \\
+      \frac{1}{t^{2}} \text{ si } t \geq 1
+    \end{cases}\\
+    |f_{n}(t)| \leq \varphi(t) \text{ indépendant de n}
+\end{align*}
+\(\varphi\) est continue par morceaux sur \(]0, +\infty[\)\\
+Au voisinnage de 0 : \\
+\(\varphi(t) = 1\) intégrable\\
+Au voisinnage de \(+\infty\)\\
+\(\varphi(t) = \frac{1}{t^{2}}\) intégrable\\
+Donc \(\varphi\) est intégrable sur \(]0, +\infty[\)\\
+Donc \(\int_{0}^{+\infty}f_{n}(t)dt \xrightarrow[n \to +\infty]{} \int_{0}^{+\infty}0 dt = 0\)\\
+
+\noindent \colorbox{green}{531.9}\\
+\begin{align*}
+  f:[0,1] \rightarrow \mathbb{R}, f \in \mathcal{C}^{0}([0,1])\\ 
+  \int_{0}^{1} f(t) dt \\
+  g : t \mapsto f(t^{n})
+\end{align*}
+Convergence simple : \\
+Pour \(t \in [0,1[\) fixé\\ 
+\begin{align*}
+  g_{n}(t) &= f(t^{n})\\
+           &\rightarrow f(0) \text{ par continuité de f}
+\end{align*}
+Donc \(g_{n}\xrightarrow[n \to +\infty]{} (t \mapsto f(0))\)\\
+Dominons \\
+\begin{align*}
+    |g_{n}(t)| = |f_{n}(t)| \\
+    &\leq ||f||_{\infty}^{[0,1]} \text{ existe car f continue sur [0,1], indépendant de n, intégrable sur segment [0,1]}
+\end{align*}
+Par convergence dominée\\
+\begin{equation*}
+    \int_{0}^{1} g_{n}(t)dt \xrightarrow[n \rightarrow +\infty]{} \int_{0}^{1}f(0)dt = f(0)
+\end{equation*}
+
+\noindent \colorbox{green}{531.16}\\
+On note \(f_{n}(x) = \frac{1}{(1+x^{3})^{n}}\)\\
+Soit \(x \in ]0, +\infty[\) fixé
+\begin{align*}
+   f_{n}(x)  \xrightarrow[n \rightarrow +\infty]{} 0
+\end{align*}
+Donc \(f_{n} \xrightarrow[n \rightarrow +\infty]{cs} (x \mapsto 0)\)\\
+Dominons \\
+\begin{align*}
+  |f_{n}(t)| \leq \frac{1}{1+x^{3}} \text{ indépendant de n, intégrable sur } ]0, +\infty[
+\end{align*}
+Donc par convergence dominée
+\begin{align*}
+  v_{n} &= \int_{0}^{+\infty}\frac{dt }{(1+t^{3})^{n}}\\
+    v_{n}  \xrightarrow[n \rightarrow +\infty]{} &\int_{0}^{+\infty} 0 dt \\
+    &= 0
+    u_{n} &= (-1)^{n}v_{n}
+\end{align*}
+or \(v_{n}\) est décroissante car \((1 + t^{3})^{n} \leq (1+t^{3})^{n+1}\)
+
+\noindent \colorbox{green}{531.20}\\
+a/ 
+\begin{align*}
+    g_{n}(x) = \frac{f(x)}{1+x^{n}} \rightarrow \begin{cases}
+      f(x) \text{ si } x \in [0, 1[ \\
+      \frac{f(1)}{2} \text{ si x = 1}\\
+      0 \text{ si } x \in ]1, b]
+    \end{cases}
+\end{align*}
+Dominons : \(|g_{n}(x)| \leq |f(x)|\) indépendant de n \\
+\(f(x)\) continue sur [a,b] segment donc intégrable\\
+b/ Calculons par parties avec \(xf(x) \in \mathcal{C}^{1}\)
+\begin{align*}
+  \int_{0}^{1} \frac{x^{n-1}}{1+x^{n}}x f(x) dx &= [\frac{1}{n}ln(1+x^{n}xf(x))]^{1}_{a}-\int_{a}^{1}\frac{1}{n}ln(1+x^{n})(f(x)+xf'(x))dx\\
+                                                &= \frac{1}{n}ln(2)f(1) - \frac{1}{n}ln(1+a^{n})af(a)-\frac{1}{n}J_{n}\\
+                                                &= \frac{1}{n}ln(2)f(1) + \frac{1}{n}o(1) -\frac{1}{n}J_{n}
+\end{align*}
+Montrons que \(J_{n}\xrightarrow[n \to +\infty]{} 0\)
+\begin{align*}
+  f_{n}(x) &= ln(1+x^{n})(f(x)-xf'(x))
+\end{align*}
+Soit \(x \in [a, 1[\) fixé
+\begin{align*}
+  f_{n}(x) \xrightarrow[n\to +\infty]{} 0\\
+  f_{n} \xrightarrow[]{cs} g:x \mapsto 0
+\end{align*}
+\underline{Dominons}
+\begin{align*}
+  |f_{n}(x)| &= ln(1+x^{n})|f(x) + xf'(x)| \\
+             &\leq ln(2)|f(x)+xf'(x)|\\
+             &\hookleftarrow \text{indé de n et continue sur [a,1] segment donc intégrable sur } [a,1[
+\end{align*}
+Par convergence dominée 
+\begin{equation*}
+  J_{n} \xrightarrow[n \to +\infty]{} \int_{a}^{1}g(x)dx = 0
+\end{equation*}
+\begin{align*}
+  \text{Ainsi } I_{n}&=\frac{1}{n}ln(2)f(1) + \frac{1}{n}o(1)\\
+                     &\backsim_{+\infty} \frac{1}{n}ln(2)f(1)
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
