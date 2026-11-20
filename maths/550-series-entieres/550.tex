@@ -1,0 +1,48 @@
+%! TeX root = 550.tex
+\documentclass{article}
+\usepackage{default_notes}
+
+\begin{document}
+  
+\noindent \colorbox{green}{550.6}\\
+\begin{align*}
+  Arccos'(x) &= -\frac{1}{\sqrt{1-x^{2}}}\\ 
+             &= -(1-x^{2})^{-\frac{1}{2}}\\ 
+             &= - \sum_{n=0}^{+\infty}\frac{(-\frac{1}{2})(-\frac{3}{2})\dots(-\frac{1}{2}-n+1)}{n!}(-x^{2})^{n}\\ 
+             &= - \sum_{n=0}^{+\infty}\frac{1\times 3 \times 5 \times \dots \times (2n-1)}{2^{n}n!}(-1)^{n}(-1)^{n}x^{2n}\\ 
+             &= -\sum_{n=0}^{+\infty}\frac{(2n)!}{2^{2n}(n!)^{2}}x^{2n}\\ 
+             &= -\sum_{n=0}^{+\infty}\binom{2n}{n}\frac{x^{2n}}{4^{n}}\\ 
+  Arccos(x) &= \frac{\pi}{2} - \sum_{n=0}^{+\infty}\binom{2n}{n}\frac{x^{2n+1}}{(2n+1)4^{n}}
+\end{align*}
+
+\noindent \colorbox{green}{550.3}\\ 
+\begin{align*}
+    \ln(1+t) = \sum_{n=1}^{+\infty}\frac{(-1)^{n-1}}{n}t^{n}
+\end{align*}
+Théorème radial d'Abel + continuité du logarithme et c'est cool \\
+
+\noindent \colorbox{green}{550.4}\\ 
+\begin{align*}
+  \int_{0}^{1}\frac{dt }{1+t} &= \int_{0}^{1}\sum_{n=0}^{+\infty}(-t)^{n} dt
+\end{align*}
+\((t \mapsto \sum_{n=0}^{N}(-t)^{n})_{N \in \mathbb{N}}\)
+converge simplement sur \(]-1, 1[\) vers \(t \mapsto 0\)\\ 
+\underline{Dominons}
+\begin{align*}
+  |\sum_{n=0}^{+\infty}(-t)^{n}| &= |\frac{1-(-t^{n+1})}{1+t}| \\
+                                 &\leq \frac{1+t}{1+t} = 1 \indent \text{indépendant de N, intégrable sur} ]0, 1[
+\end{align*}
+\begin{align*}
+  \int_{0}^{1}\sum_{n=0}^{+\infty}(-t)^{n}dt &\xrightarrow[N \to +\infty]{} \int_{0}^{1}\sum_{n=0}^{+\infty}(-t)^{n}dt \\ 
+  \sum_{n=0}^{N}\int_{0}^{1}(-t)^{n}dt &= \sum_{n=0}^{N}\frac{(-1)^{n}}{n+1}\\ 
+                                       &\xrightarrow[n \to +\infty]{} \sum_{n=0}^{+\infty}\frac{(-1)^{n}}{n+1}\\ 
+                                       &= \sum_{n=1}^{+\infty}\frac{(-1)^{n-1}}{n}
+\end{align*}
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,325 @@
+%! TeX root = 660.tex
+\documentclass{article}
+\usepackage{default_notes}
+
+
+\begin{document}
+
+\begin{equation*}
+    h(x,t) \mapsto \frac{\sin xt}{t^{2}}
+\end{equation*}
+* \(\forall t \in [1, +\infty[, x \mapsto \frac{\sin xt}{t^{2}}\) 
+est continue\\
+* \underline{Dominons}
+\begin{align*}
+  |h(x,t)| &= \frac{|\sin xt|}{t^{2}}\\
+           &\leq \frac{1}{t^{2}}=\varphi(t)
+\end{align*}
+\(\varphi\) indépendant de x et intégrable sur \([1, +\infty[\)\\
+Sous réserve de limites finies du crochet
+\begin{align*}
+  \int_{1}^{+\infty}\frac{1}{t^{2}}\sin xt dt &= [\frac{1}{t^{2}}(-\frac{1}{x})cos(xt)]^{+\infty}_{1} 
+  - \int_{1}^{+\infty}\frac{-1}{x}cos(xt)(-2)\frac{1}{t^{3}}dt \\
+  &= 0 + \frac{cosx}{x} - \frac{2}{x}\int_{1}^{+\infty}\frac{\cos xt}{t^{2}}dt \\
+  &\rightarrow 0 
+\end{align*}
+
+\noindent \colorbox{green}{660.3}\\
+Soit \(x \in [0, +\infty[\)\\
+* \(t \mapsto \frac{\sin t}{t}e^{-xt}\) continue sur \(]0, +\infty[\)\\
+* Au voisinnage de \(t \rightarrow 0\)\\ 
+\begin{align*}
+  \frac{\sin t}{t}e^{-xt} &\backsim \frac{t}{t}1\\
+                          &= 1 \to 1
+\end{align*}
+Donc l'intégrale est faussement généralisée en 0 \\
+* Au voisinnage de \(t \mapsto +\infty\)\\
+1er cas \(x > 0\)\\
+\begin{align*}
+  \frac{\sin t}{t}e^{-xt} &= \frac{O(1)}{t}e^{-xt}\\
+                          &= o(e^{-xt})\\
+                          &\text{intégrable en \(+\infty (x>0)\)}
+\end{align*}
+2e cas : \(x = 0\)\\
+On sait que \(\int_{0}^{+\infty} \frac{\sin t}{t}dt\) cv \\
+
+\noindent b/ On note \(h(x,t) = \frac{\sin t}{t}e^{-xt}\)\\
+* \(t \mapsto h(x,t)\) est intégrable sur \(]0, +\infty[\) par (a)
+donc le cas où \(x > 0\)\\
+* \(x \mapsto h(x,t) = \frac{\sin t}{t}e^{-xt}\) sur \(]0, +\infty[\)
+et \(\frac{\delta h}{\delta x}(x,t) = -\sin t e^{-xt}\)\\
+* \underline{Dominons :}\\
+\begin{align*}
+  \forall t \in ]0, +\infty[, \forall x \in [a, +\infty[\\
+  |\frac{\delta h}{\delta x}(x,t)| &= |\sin t| e^{-xt}\\ 
+                                   &\leq e^{-at}
+                                   &\text{indépendante de x, intégrable sur \(]0, +\infty[\)}
+\end{align*}
+Donc f est \(\mathcal{C}^{1}\) sur tout \([a, +\infty[ \subset ]0, +\infty[\) donc en
+\(]0, +\infty[\) et 
+\begin{align*}
+  f'(x) &= \int_{0}^{+\infty}-\sin t e^{-xt}dt\\ 
+        &= -Im(\int_{0}^{+\infty}e^{(-x+i)t}dt)\\
+        &\text{\(t \mapsto e^{(-x+i)t}\) intégrable sur \(]0, +\infty[\) car \(|e^{(-x+i)t}| = e^{-xt}\)}\\ 
+        &-Im([\frac{1}{-x+i}e^{(-x+i)t}]_{0}^{+\infty})\\
+        &= -\frac{1}{x^{2}+1}
+\end{align*}
+Donc \(\exists C \in \mathbb{R}\) tq \\
+\begin{align*}
+    \forall x > 0 \\ 
+    f(x) = -Arctanx + C
+\end{align*}
+\underline{Limite en \(+\infty\)}\\
+* \(\forall t \in ]0, +\infty[\)
+\begin{align*}
+  h(x,t) &= \frac{\sin t}{t}e^{-xt}\\
+         &\to_{x \rightarrow +\infty} 0 \text{ (c'est l(t))}
+\end{align*}
+* \underline{Dominons}\\
+\begin{align*}
+  \forall x \in [2, +\infty[. \forall t \in ]0, +\infty[
+  |h(x,t)| &= \frac{|\sin t|}{t}e^{-xt} \\
+           &\leq 1 e^{-2t} \text{ indépendant de x, intégrable sur \(]0, +\infty[\)}
+\end{align*}
+Par \underline{cv dominéee}
+\begin{equation*}
+  f(x) \rightarrow_{x\to +\infty} \int_{0}^{+\infty}0 dt = 0\\ 
+  \text{Or} - Arctanx + C \to -\frac{\pi}{2} + C
+\end{equation*}
+Donc \(C = \frac{\pi}{2}\)\\
+c/ 
+\begin{align*}
+  &f(x)= &\frac{\pi}{2}-Arctan x \indent \forall x > 0\\ 
+  &\downarrow x\to 0 &\downarrow x \to 0\\
+  &f(0)  &\frac{\pi}{2}
+\end{align*}
+Car f continue en 0 \\ 
+donc \(\int_{0}^{+\infty}\frac{\sin t}{t}dt = \frac{\pi}{2}\)\\
+
+\noindent \colorbox{green}{660.4}\\
+\begin{align*}
+    f : \mathbb{R} \rightarrow \mathbb{R}\\
+    g(x) = \int_{-\infty}^{+\infty}e^{-ixt}f(t)dt \\
+    |e^{-ixt}f(t)| = |f(t)|
+\end{align*}
+* \(t \mapsto e^{-ixt}f(t)\) continue dans \(]-\infty; +\infty[\)\\
+* Au voisinnage de \(t \rightarrow +\infty\)
+\begin{equation*}
+    |e^{-ixt}f(t)| = |f(t)| \leq |tf(t)|
+\end{equation*}
+Donc c'est intégrable\\
+* \underline{Au voisinnage de \(t \rightarrow -\infty\)}\\
+de même \\
+* \(t \mapsto e^{-i xt}f(t)\) intégrable sur \(]-\infty, +\infty[\)\\
+* \(x \mapsto e^{-i xt}f(t)\) est \(\mathcal{C}^{1}\)
+et \(\frac{\delta}{\delta x}h(x,t) = -ite^{i xt}f(t)\)\\
+* On domine : 
+\begin{equation*}
+  |-ite^{-i xt}f(t)| \leq |t f(t)| \text{intégrable par hypothèse, indépendant de x}
+\end{equation*}
+donc g est \(\mathcal{C}^{1}\)
+\begin{equation*}
+    g'(x) = -i \int_{-\infty}^{+\infty} t e^{-i xt}f(t)dt
+\end{equation*}
+
+\noindent \colorbox{green}{660.5}\\
+\begin{align*}
+  \mathcal{L} \{f\}: s&\mapsto \int_{0}^{+\infty}e^{-s t}f(t)dt \\
+  F(s) &= \mathcal{L}\{f\}(s)
+\end{align*}
+a/ Soit \(s \in ]0, +\infty[\) 
+\begin{equation*}
+  F(s) = \int_{0}^{+\infty}e^{-s t}f(t)dt
+\end{equation*}
+\(t \mapsto e^{-st}f(t)\) est continue sur \([0, +\infty[\)\\
+\underline{Au voisinnage de \(t \to +\infty\)}
+\begin{align*}
+  e^{-st }f(t) &= e^{-st}o(t^{2})
+\end{align*}
+\(\mathcal{D}_{F} = ]0, +\infty[\)\\ 
+\(t \mapsto e^{-s t}f(t)\) est continue sur \([0, +\infty[\)\\ 
+\underline{Dominons : }\\ 
+Pour \(s \in [a, +\infty[ \subset ]0, +\infty[\)
+\begin{align*}
+  |e^{-s t}f(t)| &= e^{-s t}|f(t)|\\ 
+                 &\leq e^{-a t}|f(t)| \indent \text{indépendant de s}\\ 
+                 &= \varphi(t)
+\end{align*}
+\(\varphi\) est continue sur \([0, +\infty[\)\\ 
+Au voisinnage de \(t \to +\infty\)
+\begin{align*}
+  \varphi(t)&= e^{-at}|f(t)| \\
+            &= e^{-at}o(t^{k})\\ 
+            &= o(e^{-\frac{a}{k}t}) \indent \text{intégrable en} +\infty
+\end{align*}
+Donc F est continue sur \(]0, +\infty[\)\\ 
+c/ \(h(s, t) = e^{-st}f(t)\)\\ 
+* \(t \mapsto h(s,t)\) est intégrable sur \(]0, +\infty[\)\\ 
+* \(s \mapsto h(s,t) = e^{-s t}f(t)\) est \(\mathcal{C}^{1}\) sur \(]0, +\infty[\)
+et \(\pdv{h}{x}(s,t) = -te^{-s t}f(t)\)\\ 
+* Dominons pour \(s \in [a, +\infty[ \subset ]0, +\infty[\) 
+\begin{align*}
+  |\pdv{h}{x}(s,t)| &= te^{-s t}|f(t)| 
+                    &\leq t e^{- a t}|f(t)| = \psi(t)\\ 
+  \psi(t) &= e^{- a t}o(t^{k+1})\\ 
+          &= o(e^{-\frac{a}{k}t}) \indent \text{intégrable}
+\end{align*}
+Donc F est \(\mathcal{C}^{1}\) sur tout \([a, +\infty[ \subset]0, +\infty[\)
+donc sur \(]0, +\infty[\)\\ 
+Et \(F'(s) = \int_{0}^{+\infty}-t f(t) e^{-s t}dt \)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\noindent \colorbox{green}{660.11}\\
+\begin{equation*}
+    F : x \mapsto \int_{0}^{1}\sin (tx) dt
+\end{equation*}
+\(\forall x \in \mathbb{R}, t \mapsto \sin(tx)\) intégrable 
+sur [0,1]\\
+\(h : x \mapsto \sin(tx)\) est \(\mathcal{C}^{\infty}\) sur \(\mathbb{R}\)\\
+\begin{equation*}
+    \frac{\delta^{k} h}{\delta x^{k}} = t^{k}\sin(tx + k \frac{\pi}{2})
+\end{equation*}
+\underline{Dominons}\\
+\begin{align*}
+  |t^{k}\sin(tx + k \frac{\pi}{2})| \leq t^{k} \indent \text{indépendant de x, intégrable sur [0,1]}
+\end{align*}
+F est \(\mathcal{C}^{\infty}\) et \(F^{(x)}(x) = \int_{0}^{1}t^{k}\sin(tx + k \frac{\pi}{2})\)\\
+
+\noindent \colorbox{green}{660.13}\\ 
+\begin{align*}
+    f(x) = \int_{0}^{+\infty}\frac{e^{-x t}}{\sqrt{1 + t}} dt 
+\end{align*}
+a/ \(t \mapsto \frac{e^{-x t}}{\sqrt{1 + t}}\) est continue
+pour \(x \in \mathbb{R}\) sur \([0, +\infty[\)\\
+\underline{Au voisinnage de \(t \rightarrow +\infty\)}\\ 
+\begin{align*}
+  \frac{e^{-xt}}{\sqrt{1+t}} &= e^{-xt}O(1)\\ 
+                             &= O(e^{-xt}) \text{ intégrable si } x > 0\\
+                             Def = ]0, +\infty[
+\end{align*}
+
+\noindent Montrons que f est \(\mathcal{C}^{1}\)\\ 
+* \(t \mapsto h(x,t)\) est intégrable sur \([0, +\infty[\)\\
+* \(x \mapsto h(x,t)\) est de classe \(\mathcal{C}^{1}\) sur \(]0, +\infty[\)
+et \(\pdv{h}{x}(x,t) = -t \frac{e^{-x t}}{\sqrt{1 + t}}\)\\
+\underline{Dominons}\\
+\begin{align*}
+  \forall x \in [a, +\infty[ \subset ]0, +\infty[, \forall t \in [0, +\infty[\\ 
+  |\pdv{h}{x}(x,t)| &= \frac{te^{- xt}}{\sqrt{1+t}}\\ 
+                    &\leq \underbrace{\frac{t e^{-x t}}{\sqrt{1+t}}}_{\varphi(x)} \indent \text{indépendant de x}
+\end{align*}
+* \(\varphi\) continue sur \([0, +\infty[\)\\
+* Au voisinnage de \(t \mapsto +\infty\)
+\begin{align*}
+  \frac{t e^{-a t}}{\sqrt{1+t}} &= O(e^{\frac{a}{2}t})e^{-a t}\\ 
+                                &= o(e^{-a t}) \indent \text{intégrable en } +\infty
+\end{align*}
+
+Donc f est \(\mathcal{C}^{1}\) sur \(]0, +\infty[\) et \(f'(x) = \int_{0}^{+\infty}\frac{-te^{-x t}}{\sqrt{1+t}}dt\)
+\begin{align*}
+  f'(x)-f(x) &= -\int_{0}^{+\infty}(1+t)\frac{e^{-x t}}{\sqrt{1+t}}dt\\
+             &= -\int_{0}^{+\infty}\sqrt{1+t}\frac{e^{-x t}}{\sqrt{1+t}}dt \\
+             &= -[\sqrt{1+t}\frac{e^{-xt}}{-x}]^{+\infty}_{0} + \int_{0}^{+\infty}\frac{1}{2 \sqrt{1+t}}\frac{e^{-x t}}{-x}dt\\
+             &= 0 - \frac{1}{x} - \frac{1}{2x}f(x)\\
+  \Aboxed{xy' + &(\frac{1}{2}-x)y = -1}
+\end{align*}
+c/ * \(\frac{e^{-x t}}{\sqrt{1+t}}\xrightarrow[x \to +\infty]{} 0\)\\ 
+* \underline{Dominons}\\ 
+Pour \(x \in [7, +\infty[\) et \(t \in ]0, +\infty[\)\\ 
+\begin{align*}
+  |\frac{e^{-x t}}{\sqrt{1+t}}| &\leq e^{-7 t} \indent \text{indépendant de x, intégrable sur } +\infty
+\end{align*}
+Par convergence dominée : 
+\begin{align*}
+  f(x) \xrightarrow[x\to +\infty]{} \int_{0}^{+\infty}0 dt = 0 \\ 
+\end{align*}
+On pose 
+\(\begin{cases}
+    u = xt \\
+    du =  x dt 
+\end{cases}\)
+\begin{align*}
+  f(x) &= \int_{0}^{+\infty}\frac{e^{-u}}{\sqrt{1 + \frac{u}{x}}}du \\ 
+       &= \frac{1}{\sqrt{x}}\underbrace{\int_{0}^{+\infty}\frac{e^{-u }}{\sqrt{x + u}}}_{g(x)}
+\end{align*}
+* \(\frac{e^{-u }}{\sqrt{x + u}} \xrightarrow[x \to 0]{} \frac{e^{-u }}{\sqrt{u }}\)\\ 
+* Dominons : \\
+Pour \(x \in ]0, +\infty[\) et \(u \in [0, +\infty[\)
+\begin{align*}
+  |\frac{e^{-u }}{\sqrt{x + u }}| &\leq \frac{e^{-u }}{\sqrt{u }} \indent \text{indépendant de u}\\ 
+                                  &= \varphi(u) \indent \text{intégrable sur } [0, +\infty[
+\end{align*}
+Au voisinnage de \(u \rightarrow +\infty\)\\
+\(\frac{e^{-u }}{\sqrt{u }} = o(e^{-u})\) intégrable en \(+\infty\)\\ 
+* Au voisinnage de \(u \to 0\)\\
+\(\frac{e^{-u }}{\sqrt{u }} \backsim \frac{1}{\sqrt{u }}\) intégrable en 0\\
+Par convergence dominéee : 
+\begin{align*}
+  g(x) \xrightarrow[x \to 0]{}\int_{0}^{+\infty}\frac{e^{-u }}{\sqrt{u }}du = A 
+\end{align*}
+Donc \(f(x) \xrightarrow[x \to 0] +\infty\)\\ 
+\(f(x) \backsim_{0} \frac{A}{\sqrt{x}}\)\\
+
+\noindent \colorbox{green}{660.18}\\ 
+* \(t \mapsto \frac{t^{x}}{1+t}\) est continue sur \(]0, 1]\)\\ 
+Au voisinnage de \(t \to 0\): 
+\begin{align*}
+  \frac{t^{x}}{1+t} \backsim t^{x} \indent \text{intégrable ssi } x> -1 
+\end{align*}
+Donc F est définie sur \(]-1, +\infty[\)
+
+\noindent c/ 
+\begin{align*}
+  F(x+1) &= \int_{0}^{1}\frac{t^{x+1}}{1+t}dt \\ 
+         &= \int_{0}^{1}\frac{t^{x}t}{1+t}dt \\ 
+         &= \int_{0}^{1} \frac{t^{x}(t+1-1)}{1+t}dt \\ 
+         &= \int_{0}^{1}t^{x}dx - F(x)\\ 
+         &= [\frac{1}{x+1}t^{x+1}]^{1}_{0} - F(x)
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+  
