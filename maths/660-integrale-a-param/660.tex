@@ -295,6 +295,50 @@ Donc F est définie sur \(]-1, +\infty[\)
          &= [\frac{1}{x+1}t^{x+1}]^{1}_{0} - F(x)
 \end{align*}
 
+\noindent \colorbox{green}{660.21}\\
+\begin{align*}
+    F:t \mapsto \int_{0}^{+\infty}\frac{e^{(-u^{2}+i)t^{2}}}{u^{2}-i}du   
+\end{align*}
+\(h(u,t) = \frac{e^{(-u^{2}+i)t^{2}}}{u^{2}-i}\)\\
+\(u \mapsto h(u,t)\) est continue sur \([0, +\infty[\)\\
+\underline{Au voisinnage de \(u \rightarrow +\infty\)}\\
+\begin{align*}
+  |h(u,t)| &= \frac{e^{-u^{2}t^{2}}}{\sqrt{u^{4}+1}}\\ 
+           &\leq \frac{1}{\sqrt{u^{4}+1}}\\
+           &\backsim \frac{1}{u^{2}} \indent \text{intégrable en }+\infty
+\end{align*}
+Donc \(\mathcal{D}_{F} = \mathbb{R}\)\\
+2/ * Pour \(u \in ]0, +\infty[\)\\
+\begin{align*}
+  |h(t,u)| &= \frac{e^{-u^{2}t^{2}}}{\sqrt{u^{4}+1}}\\ 
+           &\xrightarrow[t \to +\infty]{} 0
+\end{align*}
+Dominons, pour \(u \in ]0, +\infty[\)
+\begin{align*}
+  |h(t,u)| &\leq \frac{1}{\sqrt{u^{4}+1}} \indent \text{indépendant de t, intégrable sur }[0, +\infty[
+\end{align*}
+Par cv dominée : 
+\begin{align*}
+  F(t) \xrightarrow[t \to +\infty]{}\int_{0}^{+\infty}0 du = 0
+\end{align*}
+4/ *\(u \mapsto h(t,u)\) est intégrable sur \([0, +\infty[\)\\ 
+* \(t \mapsto h(t,u)\) est \(\mathcal{C}^{1}\) sur \(\mathbb{R}\) et 
+\(\pdv{h}{t}(t,u) = -2te^{-(u^{2}+i)t^{2}}\)\\ 
+* Dominons : pour \(u \in [0, +\infty[, t \in [a,b]\subset]0, +\infty[\)
+\begin{align*}
+  |\pdv{h}{t}(t,u)| &= 2te^{-u^{2}t^{2}}\\ 
+                    &\leq 2be^{-u^{2}a^{2}} \indent \text{indépendant de t, intégrable sur }[0, +\infty[
+\end{align*}
+Donc F et \(\mathcal{C}^{1}\) sur \(]0, +\infty[\) et 
+\(F'(t) = \int_{0}^{+\infty}-2t e^{(-u^{2}+i)t^{2}}du\)
+d/ 
+\begin{align*}
+    F(0) = \pi \frac{1+i}{2 \sqrt{2}}
+\end{align*}
+\begin{align*}
+  F'(t) &= -2e^{it^{2}} \underbrace{\int_{0}^{+\infty} e^{-x^{2}}dx }_{\frac{\sqrt{\pi}}{2}} & x = ut, dx = t du \\ 
+  \int_{0}^{+\infty}F'(t)dt &= -\sqrt{\pi}(\int_{0}^{+\infty}\cos(t^{2})dt + i \int_{0}^{+\infty}\sin(t^{2})dt)
+\end{align*}
 
 
 
