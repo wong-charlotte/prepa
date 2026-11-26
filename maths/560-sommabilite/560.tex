@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{default_notes}
+
+\begin{document}
+\noindent \colorbox{green}{560.1}\\ 
+\begin{align*}
+    \zeta(s) = \sum_{p=1}^{+\infty} \frac{1}{p^{s}}
+\end{align*}
+Dans \(]0, +\infty[ \cup \{+\infty\} \)
+\begin{align*}
+  \frac{1}{p^{s}} &= \frac{p}{p^{s+1}}\\ 
+                  &= \sum_{n=1}^{p}\frac{1}{p^{n+1}}\\ 
+  \zeta(s) &= \sum_{p=1}^{+\infty}(\sum_{n=1}^{p}\frac{1}{p^{s+1}})\\
+          &= \sum_{p=1}^{+\infty} \sum_{n=1}^{p}\frac{1}{p^{s+1}}
+\end{align*}
+Fubini positif
+\begin{align*}
+  (U_{i,j})_{(i,j) \in I \times J}\\ 
+  \sum_{(i,j) \in I \times J}^{} u_{i,j} &= \sum_{i \in I}^{j \in J} u_{i,j}\\ 
+  u_{np} &= 
+  \begin{cases}
+    \frac{1}{p^{s+1}} \text{ si } n \leq p \\ 
+    0 \text{ si } n > p
+  \end{cases}\\
+  p \in [1, +\infty[, n \in [1, +\infty[
+\end{align*}
+Donc 
+\begin{align*}
+  \zeta(s) &= \sum_{p=1}^{=\infty}\sum_{n=1}^{+\infty} u_{n,p}\\ 
+           &= \sum_{n=1}^{=\infty}\sum_{p=1}^{+\infty} u_{n,p}\\ 
+           &= \sum_{n=1}^{+\infty} \sum_{p=n}^{+\infty} \frac{1}{p^{n+1}}
+\end{align*}
+
+
+
+
+
+\end{document}
+
